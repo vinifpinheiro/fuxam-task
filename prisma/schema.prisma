@@ -16,7 +16,6 @@ model Task {
     id Int @id @default(autoincrement())
     discipline String
     teatcher_name String @db.Text()
-    date DateTime
     question String @db.VarChar(255)
     response String 
     post_id Int

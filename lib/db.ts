@@ -4,7 +4,6 @@ export interface Task {
     id: number
     discipline : string
     teatcher_name: string
-    date: Date
     post_id: number
     question: string
     response: string 
@@ -29,7 +28,6 @@ export async function getTask () {
 export async function createTask (
     discipline : string,
     teatcher_name: any,
-    date: Date,
     post_id: number,
     question: string,
     response: string
@@ -38,7 +36,6 @@ export async function createTask (
         data: {
             discipline,
             teatcher_name,
-            date,
             question,
             response,
             post_id
