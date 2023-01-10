@@ -1,4 +1,4 @@
-import {prisma} from "./prisma"
+import { prisma } from "./prisma"
 
 export interface Task {
     id: number
@@ -6,7 +6,8 @@ export interface Task {
     teatcher_name: string
     post_id: number
     question: string
-    response: string 
+    response: string
+    student_name: string
 }
 
 export interface Teatcher {
@@ -25,21 +26,34 @@ export async function getTask () {
     return data
 }
 
-export async function createTask (
-    discipline : string,
-    teatcher_name: any,
-    post_id: number,
-    question: string,
-    response: string
+export async function createTask(
+  discipline: string,
+  teatcher_name: any,
+  post_id: number,
+  question: string,
+  response: string,
+  student_name: string
 ) {
-    await prisma.task.create({
-        data: {
-            discipline,
-            teatcher_name,
-            question,
-            response,
-            post_id
+  await prisma.task.create({
+    data: {
+      discipline,
+      teatcher_name,
+      question,
+      response,
+      post_id,
+      student_name,
+    },
+  });
+}
+
+export async function updateTask(response: string) {
+    await prisma.task.update({
+        where: {
+           response,
         },
+        data: {
+            response
+        }
     })
 }
 

@@ -4,7 +4,7 @@ import "../styles/globals.css";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
-    <Component className="bg-white" {...pageProps} />
+    <Component {...pageProps} />
   );
 };
 

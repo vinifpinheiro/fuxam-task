@@ -19,6 +19,7 @@ model Task {
     question String @db.VarChar(255)
     response String 
     post_id Int
+    student_name String
 }
 
 model Teatcher {
