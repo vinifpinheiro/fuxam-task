@@ -1,6 +1,7 @@
 import { GetServerSideProps, NextPage } from "next";
 import { Task, getTask } from "../../lib/db";
 import Link from "next/link";
+import { useState } from "react"
 
 interface PostTask {
     tasks: Task[]
@@ -17,6 +18,15 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
 const Student = ({ tasks }: PostTask) => {
 
+    const [response, setResponse] = useState("")
+
+    const handleClick = async () => {
+        await fetch("/api/task", {
+            method: 'PUT',
+            body: JSON.stringify(response)
+        }
+        )
+    }
 
     return (
         <>
@@ -28,12 +38,12 @@ const Student = ({ tasks }: PostTask) => {
                         </svg>
                     </Link>
                 </div>
-                
+
                 <div className="flex justify-center pt-4 min-w-screen min-h-[480px]">
                     <div className="flex flex-col ">
                         {
                             tasks?.map((item, index) => (
-                                <div key={item.id} className="bg-white px-12 py-10  text-2xl rounded-lg w-90 mb-14">
+                                <div className="bg-white px-12 py-10  text-2xl rounded-lg w-90 mb-14">
                                     <div className="flex justify-start ">
                                         <span className=" flex  bg-slate-600 flex justify-center items-center rounded-full w-8 h-8 text-gray-50 font-bold">{item.id}</span>
                                     </div>
@@ -41,13 +51,13 @@ const Student = ({ tasks }: PostTask) => {
 
                                         <div className="flex  flex-col font-bold text-center">
                                             <p className="">{item.discipline} Task</p>
-                                            <p>{item.teatcher_name}</p>
+                                            <p>{item.teatcher}</p>
 
                                         </div>
 
                                     </div>
 
-                                    <div key={item.id} className="flex justify-center text-center">
+                                    <div className="flex justify-center text-center">
                                         <div className="px-12 py-8 flex ">
                                             <form action="" className="flex flex-col ">
                                                 <label htmlFor="" className="mb-5">{item.question}</label>
@@ -67,11 +77,16 @@ const Student = ({ tasks }: PostTask) => {
                                                     m-0
                                                     focus:text-gray-700 focus:bg-white focus:border-purple-600 focus:outline-none
                                                     "
-                                                    name="" id="" ></textarea>
+                                                    name=""
+                                                    id=""
+                                                    value={response}
+                                                    onChange={(e)=> setResponse(e.currentTarget.value)}
+
+                                                ></textarea>
                                                 <div className="flex justify-center mt-6">
-                                                    <button type="submit" className="flex justify-center p-4 bg-slate-600 text-gray-50 rounded-xl ">Send</button>
+                                                    <button className="flex justify-center p-4 bg-slate-600 text-gray-50 rounded-xl " onClick={()=>handleClick()}>Send</button>
                                                 </div>
-                                                
+
                                             </form>
                                         </div>
                                     </div>

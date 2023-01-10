@@ -1,35 +1,54 @@
 import { type NextPage } from "next";
 import Link from "next/link";
+import Image from "next/image";
+import ImgTeatcher from "src/assets/teacher.svg"
+import ImgStudent from "src/assets/aluno.svg"
 
 const Home: NextPage = () => {
 
   return (
-    <div className=" grid bg-gradient-to-r from-orange-300 to-red-500 justify-center items-center h-screen">
-      <div className="container px-40 py-8 bg-slate-700 rounded-xl place-items-center ">
-          <p className="text-xl text-center text-white ">
-            Chose your user
-          </p>
-          <h1 className="mt-4 text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">Who are you?</h1>
-          <div className="mt-6 space-y-8 xl:mt-12">
-          <Link href={"/teatcher/mainTeatcher"} className="flex justify-center py-4  border border-white cursor-pointer rounded-xl hover:border-2 hover:ease-out duration-100 ">
-              <div className="flex items-center">
-                <div className="flex ">
-                  <h2 className="text-lg font-medium text-white sm:text-2xl ">Teatcher</h2>
-                </div>
+    <div className=" grid bg-gray-900  bg-gradient-to-bl justify-center items-center h-screen ">
+      <div className="container px-40 py-8 bg-white rounded-xl place-items-center max-sm:px-20">
+        <p className="text-xl text-center text-[#222222] font-bold max-sm:text-sm">
+          What User You Are?
+        </p>
+        <h1 className="mt-4 text-sm  text-center text-[#222222] capitalize lg:text-base">Choose an account type</h1>
+        <div className="mt-6 space-y-8 xl:mt-12 ">
+          <Link href={"/teacher/mainTeacher"} className="flex border border-[##00000033] cursor-pointer rounded-2xl  transform hover:scale-105 transition-all ">
+            <div className="flex items-center ">
+              <div className="flex items-center bg-[#FE7A67] rounded-l-2xl ">
+                <Image
+                  className=""
+                  src={ImgTeatcher}
+                  alt=""
+                  width={40}
+                  height={70}
+                />
+                
               </div>
-            </Link>
-          <Link href={"/student"} className="flex justify-center items-center max-w-2xl  py-4 border border-white cursor-pointer rounded-xl hover:border-2 hover:ease-out duration-100">
-              <div className="flex items-center">
-                <div className="flex ">
-                  <h2 className="text-lg font-medium text-white sm:text-2xl ">Student</h2>
-                </div>
+              <h2 className="text-lg text-[#222222] ml-4 font-bold sm:text-xl ">Teacher</h2>
+            </div>
+          </Link>
+
+          <Link href={"/teacher/mainTeacher"} className="flex   border border-[##00000033] cursor-pointer rounded-2xl  transform hover:scale-105 transition-all">
+            <div className="flex items-center justify-start">
+              <div className="flex items-center bg-[#FE7A67] rounded-l-2xl ">
+                <Image
+                  className=""
+                  src={ImgStudent}
+                  alt=""
+                  width={40}
+                  height={70}
+                />
               </div>
-            </Link>
-          </div>
+              <h2 className="text-lg text-[#222222] ml-4 font-bold sm:text-xl ">Student</h2>
+            </div>
+          </Link>
         </div>
+      </div>
     </div>
   );
-  
+
 };
 
 export default Home;

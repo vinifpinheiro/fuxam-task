@@ -6,24 +6,33 @@ import Link from "next/link";
 
 const TeatcherPage: NextPage = () => {
 
-    const [teatcherName, setTeatcherName] = useState("")
     const [discipline, setDiscipline] = useState("")
+    const [teacher, setTeacherName] = useState("")
     const [question, setQuestion] = useState("")
 
-    return(
+    const handleClick = async () => {
+        await fetch("/api/task", {
+            method: 'POST',
+            body: JSON.stringify({discipline,teacher,question})
+        }
+        )
+    }
+
+    return (
         <div>
             <div>
                 <div>
                     <Image
                         src={BgImage}
                         fill="relative"
+                        alt=""
                     />
                     <div className="absolute top-0 w-full h-full bg-center bg-cover">
                         <span id="blackOverlay" className="w-full h-full absolute opacity-75 bg-black"></span>
                     </div>
                 </div>
                 <div className=" flex justify-center  pt-4  container relative transform hover:scale-105 transition-all">
-                    <Link className=" flex items-center justify-center bg-slate-600 text-gray-50 font-bold w-8 h-8 rounded-full " href={"/teatcher/mainTeatcher"}>
+                    <Link className=" flex items-center justify-center bg-slate-600 text-gray-50 font-bold w-8 h-8 rounded-full " href={"/teacher/mainTeacher"}>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
                         </svg>
@@ -32,7 +41,23 @@ const TeatcherPage: NextPage = () => {
                 <div className="container relative ">
                     <div className="flex items-center justify-center p-12">
                         <div className="mx-auto w-full max-w-[550px]">
-                            <form action="https://formbold.com/s/FORM_ID" method="POST">
+                            <form >
+                                <div className="mb-5">
+                                    <label
+
+                                        className="mb-3 block text-base font-medium text-white"
+                                    >
+                                        Discipline
+                                    </label>
+                                    <input
+                                        value={discipline}
+                                        onChange={(e) => setDiscipline(e.currentTarget.value)}
+                                        type="text"
+                                        name="discipline"
+                                        placeholder="Type it her"
+                                        className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                    />
+                                </div>
                                 <div className="mb-5">
                                     <label
                                         htmlFor="name"
@@ -41,24 +66,10 @@ const TeatcherPage: NextPage = () => {
                                         Teatcher Name
                                     </label>
                                     <input
+                                        value={teacher}
+                                        onChange={(e) => setTeacherName(e.currentTarget.value)}
                                         type="text"
-                                        name="teatcher_name"
-                                        id="name"
                                         placeholder="First Name"
-                                        className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                                    />
-                                </div>
-                                <div className="mb-5">
-                                    <label
-                                        
-                                        className="mb-3 block text-base font-medium text-white"
-                                    >
-                                        Discipline
-                                    </label>
-                                    <input
-                                        type="text"
-                                        name="discipline"
-                                        placeholder="Type it her"
                                         className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                                     />
                                 </div>
@@ -70,7 +81,8 @@ const TeatcherPage: NextPage = () => {
                                         Question
                                     </label>
                                     <textarea
-                                        name="discipline"
+                                        value={question}
+                                        onChange={(e) => setQuestion(e.currentTarget.value)}
                                         placeholder="Type your question her"
                                         className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                                     />
@@ -78,6 +90,8 @@ const TeatcherPage: NextPage = () => {
                                 <div className="flex justify-center">
                                     <button
                                         className=" rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none transform hover:scale-105 transition-all"
+                                        onClick={() => handleClick()}
+                                        
                                     >
                                         Submit
                                     </button>

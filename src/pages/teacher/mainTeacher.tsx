@@ -1,9 +1,9 @@
 import { NextPage } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import BgImage from "src/assets/teatcher-page.jpg"
+import BgImage from "src/assets/teacher-page.jpg"
 
-const MainTeatcher: NextPage = () => {
+const MainTeacher: NextPage = () => {
     return (
         <div className="bg-gradient-to-r from-orange-300 to-red-500 ">
             <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css" />
@@ -47,7 +47,7 @@ const MainTeatcher: NextPage = () => {
                 <section className="pb-10 bg-gradient-to-r from-orange-300 to-red-500 -mt-24 ">
                     <div className="container mx-auto px-4">
                         <div className="flex flex-wrap flex justify-center">
-                            <Link href={"/teatcher/newTask"} className="pt-6 w-full md:w-4/12 px-4 text-center transform hover:scale-105 transition-all">
+                            <Link href={"/teacher/newTask"} className="pt-6 w-full md:w-4/12 px-4 text-center transform hover:scale-105 transition-all">
                                 <div className="relative flex flex-col min-w-0 break-words bg-blueGray-200 w-full mb-8 shadow-lg rounded-lg">
                                     <div className="px-4 py-5 flex-auto">
                                         <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
@@ -66,7 +66,7 @@ const MainTeatcher: NextPage = () => {
                                     </div>
                                 </div>
                             </Link>
-                            <Link href={"/teatcher/watchTask"} className="pt-6 w-full md:w-4/12 px-4 text-center transform hover:scale-105 transition-all">
+                            <Link href={"/teacher/watchTask"} className="pt-6 w-full md:w-4/12 px-4 text-center transform hover:scale-105 transition-all">
                                 <div className="relative flex flex-col min-w-0 break-words bg-blueGray-200 w-full mb-8 shadow-lg rounded-lg">
                                     <div className="px-4 py-5 flex-auto">
                                         <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-emerald-400">
@@ -92,4 +92,4 @@ const MainTeatcher: NextPage = () => {
     )
 }
 
-export default MainTeatcher
+export default MainTeacher

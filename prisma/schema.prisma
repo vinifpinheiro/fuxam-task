@@ -15,20 +15,8 @@ datasource db {
 model Task {
     id Int @id @default(autoincrement())
     discipline String
-    teatcher_name String @db.Text()
+    teacher String
     question String @db.VarChar(255)
     response String 
-    post_id Int
-    student_name String
-}
-
-model Teatcher {
-    teatcher_id Int @id @default(autoincrement())
-    name String
-}
-
-model Student {
-    id Int @id @default(autoincrement())
-    name String
-    period String
+    student String
 }
