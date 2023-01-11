@@ -63,9 +63,9 @@ const Student = ({ tasks }: PostTask) => {
                 <div className="">
                     <Image
                         src={BgImage}
-                        fill="relative"
+                        fill={true}
                         alt=""
-                        className="max-sm:invisible"
+                        className=" max-sm:invisible"
                     />
                     <div className="absolute top-0 w-full h-full bg-center bg-cover bg-full ">
                         <span id="blackOverlay" className="w-full h-full absolute opacity-75 bg-black"></span>

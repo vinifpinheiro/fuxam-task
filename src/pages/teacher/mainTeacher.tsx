@@ -13,7 +13,8 @@ const MainTeacher: NextPage = () => {
                     <div>
                         <Image
                             src={BgImage}
-                            fill={"relative"}
+                            fill={true}
+                            alt=""
                         />
                     </div>
                     

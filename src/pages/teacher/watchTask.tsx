@@ -24,7 +24,7 @@ const WatchTask = ({ tasks }: PostTask) => {
             <div>
                 <Image
                     src={BgImage}
-                    fill="relative"
+                    fill={true}
                     alt=""
                     className="max-sm:invisible"
                 />
@@ -32,7 +32,7 @@ const WatchTask = ({ tasks }: PostTask) => {
                     <span id="blackOverlay" className="w-full h-full absolute opacity-75 bg-black"></span>
                 </div>
                 <div className=" flex justify-center  pt-4  container relative  mx-auto">
-                    <Link className=" flex items-center justify-center bg-slate-600 text-gray-50 font-bold w-8 h-8 rounded-full transform hover:scale-105 transition-all " href={"/"}>
+                    <Link className=" flex items-center justify-center bg-slate-600 text-gray-50 font-bold w-8 h-8 rounded-full transform hover:scale-105 transition-all " href={"/teacher/mainTeacher"}>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
                         </svg>
