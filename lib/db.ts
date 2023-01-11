@@ -32,15 +32,3 @@ export async function createTask(
   });
 }
 
-
-export async function updateTask(id:string, student: string, response:string) {
-  await prisma.task.update({
-    where: {
-      id
-    },
-    data: {
-      response,
-      student,
-    },
-  });
-}

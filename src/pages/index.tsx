@@ -2,7 +2,7 @@ import { type NextPage } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import ImgTeatcher from "src/assets/teacher.svg"
-import ImgStudent from "src/assets/aluno.svg"
+import ImgStudent from "src/assets/aluno.svg";
 
 const Home: NextPage = () => {
 
