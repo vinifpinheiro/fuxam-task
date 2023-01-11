@@ -2,7 +2,7 @@ import { prisma } from "./prisma";
 
 export interface Task {
   discipline: string;
-  teatcher: string;
+  teacher: string;
   question: string;
   response: string;
   student: string;
@@ -14,6 +14,7 @@ export async function getTask() {
 }
 
 export async function createTask(
+  id: number,
   discipline: string,
   teacher: string,
   question: string,
@@ -22,6 +23,7 @@ export async function createTask(
 ) {
   await prisma.task.create({
     data: {
+      id,
       discipline,
       teacher,
       question,
@@ -31,13 +33,14 @@ export async function createTask(
   });
 }
 
-export async function updateTask(teatcher: string) {
+export async function updateTask(id:number, student: string, response:string) {
   await prisma.task.update({
     where: {
-      teacher,
+      id: id
     },
     data: {
-      teatcher,
+      response,
+      student,
     },
   });
 }

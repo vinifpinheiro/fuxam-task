@@ -20,8 +20,8 @@ const TeatcherPage: NextPage = () => {
 
     return (
         <div>
-            <div>
-                <div>
+            <div >
+                <div className="w-full h-full">
                     <Image
                         src={BgImage}
                         fill="relative"
@@ -31,15 +31,15 @@ const TeatcherPage: NextPage = () => {
                         <span id="blackOverlay" className="w-full h-full absolute opacity-75 bg-black"></span>
                     </div>
                 </div>
-                <div className=" flex justify-center  pt-4  container relative transform hover:scale-105 transition-all">
-                    <Link className=" flex items-center justify-center bg-slate-600 text-gray-50 font-bold w-8 h-8 rounded-full " href={"/teacher/mainTeacher"}>
+                <div className=" flex justify-center  pt-4  container relative  mx-auto">
+                    <Link className=" flex items-center justify-center bg-slate-600 text-gray-50 font-bold w-8 h-8 rounded-full transform hover:scale-105 transition-all " href={"/teacher/mainTeacher"}>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
                         </svg>
                     </Link>
                 </div>
-                <div className="container relative ">
-                    <div className="flex items-center justify-center p-12">
+                <div className="container relative mx-auto">
+                    <div className=" p-12">
                         <div className="mx-auto w-full max-w-[550px]">
                             <form >
                                 <div className="mb-5">
@@ -63,7 +63,7 @@ const TeatcherPage: NextPage = () => {
                                         htmlFor="name"
                                         className="mb-3 block text-base font-medium text-white"
                                     >
-                                        Teatcher Name
+                                        Teacher Name
                                     </label>
                                     <input
                                         value={teacher}
@@ -89,7 +89,7 @@ const TeatcherPage: NextPage = () => {
                                 </div>
                                 <div className="flex justify-center">
                                     <button
-                                        className=" rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none transform hover:scale-105 transition-all"
+                                        className=" rounded-md bg-[#FE7A67] py-3 px-8 text-base font-semibold text-white outline-none transform hover:scale-105 transition-all"
                                         onClick={() => handleClick()}
                                         
                                     >

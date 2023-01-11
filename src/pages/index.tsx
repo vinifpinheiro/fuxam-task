@@ -8,7 +8,7 @@ const Home: NextPage = () => {
 
   return (
     <div className=" grid bg-gray-900  bg-gradient-to-bl justify-center items-center h-screen ">
-      <div className="container px-40 py-8 bg-white rounded-xl place-items-center max-sm:px-20">
+      <div className="container shadow-box-[0_35px_35px_rgba(255, 255, 255, 1)] px-40 py-8 bg-white rounded-xl place-items-center max-sm:px-20 ">
         <p className="text-xl text-center text-[#222222] font-bold max-sm:text-sm">
           What User You Are?
         </p>
@@ -30,7 +30,7 @@ const Home: NextPage = () => {
             </div>
           </Link>
 
-          <Link href={"/teacher/mainTeacher"} className="flex   border border-[##00000033] cursor-pointer rounded-2xl  transform hover:scale-105 transition-all">
+          <Link href={"/student"} className="flex   border border-[##00000033] cursor-pointer rounded-2xl  transform hover:scale-105 transition-all">
             <div className="flex items-center justify-start">
               <div className="flex items-center bg-[#FE7A67] rounded-l-2xl ">
                 <Image
