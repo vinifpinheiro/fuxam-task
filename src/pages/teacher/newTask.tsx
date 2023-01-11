@@ -1,8 +1,11 @@
-import { NextPage } from "next";
+import {  NextPage } from "next";
 import Image from "next/image";
 import { useState } from "react";
 import BgImage from "src/assets/newtask-page.jpg"
 import Link from "next/link";
+
+
+
 
 const TeatcherPage: NextPage = () => {
 
@@ -17,6 +20,7 @@ const TeatcherPage: NextPage = () => {
         }
         )
     }
+    
 
     return (
         <div>
